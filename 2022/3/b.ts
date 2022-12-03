@@ -54,9 +54,8 @@ const chars = [
   "Z",
 ];
 
-const rows = input.split("\n");
-
-const data = rows
+const result = input
+  .split("\n")
   .reduce((carry: Array<string[]>, value, index) => {
     if (index % 3 === 0) {
       carry.push([]);
@@ -77,4 +76,4 @@ const data = rows
     return carry;
   }, 0);
 
-console.log(data);
+console.log(result);

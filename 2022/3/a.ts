@@ -54,9 +54,8 @@ const chars = [
   "Z",
 ];
 
-const rows = input.split("\n");
-
-const data = rows
+const result = input
+  .split("\n")
   .reduce((carry: string[], row) => {
     const a = row.split("").slice(0, row.split("").length / 2);
     const b = row
@@ -76,4 +75,4 @@ const data = rows
     return carry;
   }, 0);
 
-console.log(data);
+console.log(result);
