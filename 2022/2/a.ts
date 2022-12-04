@@ -29,40 +29,16 @@ function getScore(game: Game) {
     return score;
   }
 
-  if (me === "rock") {
-    if (op === "scissor") {
-      score += 6;
+  switch (me) {
+    case "rock":
+      return op === "scissor" ? score + 6 : score;
+    case "paper":
+      return op === "rock" ? score + 6 : score;
+    case "scissor":
+      return op === "paper" ? score + 6 : score;
+    default:
       return score;
-    }
-
-    if (op === "paper") {
-      return score;
-    }
   }
-
-  if (me === "paper") {
-    if (op === "rock") {
-      score += 6;
-      return score;
-    }
-
-    if (op === "scissor") {
-      return score;
-    }
-  }
-
-  if (me === "scissor") {
-    if (op === "paper") {
-      score += 6;
-      return score;
-    }
-
-    if (op === "rock") {
-      return score;
-    }
-  }
-
-  return score;
 }
 
 const score = input
